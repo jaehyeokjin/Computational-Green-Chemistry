@@ -1,13 +1,13 @@
 <p align="center">
-  <img src="https://jinjaehyeok.wordpress.com/wp-content/uploads/2025/08/jaehyeokjin-cc.png" alt="Computational Green Chemistry" width="350">
+  <img src="https://jinjaehyeok.wordpress.com/wp-content/uploads/2025/08/jaehyeokjin-cc.png" alt="Computational Green Chemistry" width="500">
 </p>
 
-# A Computational Toolkit for Green & Sustainable Chemistry
+# An Interactive Course in Computational Green Chemistry
 
-## About This Project
+## About This Material
 This repository contains a collection of interactive, open-source Jupyter Notebooks designed to teach and apply the core principles of green and sustainable chemistry. Developed as part of a research initiative to create modern pedagogical tools, this toolkit provides students and researchers with accessible, hands-on methods for evaluating the sustainability of chemical processes. The concepts and tools presented here were originally developed for a short lecture and interactive session series during 2024-2025.
 
-The primary goal is to bridge the gap between theoretical green chemistry concepts and their practical, quantitative application, fostering a deeper understanding of how to design safer, more efficient, and environmentally benign chemical reactions.
+The primary goal is to provide a hands-on, inquiry-based learning experience that bridges the gap between the theoretical principles of green chemistry and their practical, quantitative application. By using computational tools, students can directly engage with concepts like reaction efficiency, waste minimization, and energy-efficient design in a tangible way.
 
 ## Key Features
 - **Interactive Calculations:** Move beyond static examples with tools that allow you to input your own reaction data.  
