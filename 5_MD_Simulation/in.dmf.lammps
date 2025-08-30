@@ -1,0 +1,42 @@
+# LAMMPS Input Script for a FAST DMF Heating Simulation
+
+# -- 1. Initialization --
+units           real
+atom_style      full
+boundary        p p p
+pair_style      lj/cut/coul/long 8.0 # Reduced cutoff for speed
+bond_style      harmonic
+angle_style     harmonic
+dihedral_style  opls
+special_bonds   lj/coul 0.0 0.0 0.5
+
+# -- 2. System Definition --
+read_data       data.dmf
+kspace_style    pppm 1.0e-4
+
+# -- 3. Settings --
+neighbor        2.0 bin
+timestep        1.0
+
+thermo          10
+min_style       sd
+minimize        1.0e-4 1.0e-4 500 5000
+min_style       cg
+minimize        1.0e-4 1.0e-4 500 5000
+minimize        1.0e-4 1.0e-4 500 5000
+
+timestep        1.0
+reset_timestep  0
+
+# -- 4. VERY FAST Equilibration at Start Temp --
+fix             1 all nvt temp 298.0 298.0 100.0
+thermo          200
+thermo_style    custom step temp etotal press
+run             50000 # 2 ps equilibration (very short)
+unfix           1
+
+# -- 5. VERY FAST Heating Ramp --
+fix             1 all nvt temp 298.0 400.0 100.0
+# Dump a unique trajectory file for DMF
+dump            1 all custom 500 traj.dmf.lammpstrj id mol type x y z
+run             100000 # 10 ps heating ramp (very short)
